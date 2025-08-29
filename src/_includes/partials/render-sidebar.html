@@ -1,0 +1,90 @@
+{% comment %}
+  This partial renders a single navigation item.
+  It uses recursion to handle nested menu items.
+
+  Variables:
+  - entry: The current navigation object from your navigation data.
+  - level: The current nesting level (used for indentation).
+  - page: The current page object, used for comparison.
+{% endcomment %}
+
+{% assign level = level | plus: 1 %}
+{% comment %}
+  Check if the current navigation item is a single link (no children).
+{% endcomment %}
+{% if entry.children.size == 0 %}
+  <li>
+    <a
+      data-umami-event="{{entry.title}}-navbar"
+      class="flex items-center gap-2 px-4 py-2 text-sm rounded-md transition-colors duration-200 hover:bg-interactive-hover 
+        {% if entry.url == page.url %}bg-interactive-hover font-medium{% endif %}"
+      href="{{ entry.url }}"
+    >
+      <div class="opacity-70">{% bookshop "generic/heroLibraryIcon" heroLibraryIconName: entry.icon iconType: "outline" iconSize: 'xxsmall' roundedBorder: false, themeColor: true %}</div>
+      <p>{{ entry.title }}</p>
+    </a>
+  </li>
+{% endif %}
+
+{% comment %}
+  Check if the current navigation item has children and should be an accordion.
+{% endcomment %}
+{% if entry.children.size > 0 %}
+  {% assign navUUID = "a" | uuidFilter %}
+  {% comment %}
+    Determine if the accordion should be open. This happens if the current page is a child of this entry.
+    We check the page's parent key against the current entry's key.
+  {% endcomment %}
+  {% assign isOpen = entry | isDescendantOf: page %}
+  {% assign isActive = entry.url == page.url %}
+  {% assign isToplevel = level < 1 %}
+  <div class="relative">
+    <div class="w-full">
+      <li class="w-full">
+        {% if isToplevel %}
+        <div
+          class="flex items-center gap-2 w-full px-1 py-2 text-sm rounded-md transition-colors duration-200 font-bold opacity-80
+            {% if isActive %}bg-interactive-hover font-medium{% endif %}"
+        >
+          <div class="opacity-70">{% bookshop "generic/heroLibraryIcon" heroLibraryIconName: entry.icon iconType: "outline" iconSize: 'xxsmall' roundedBorder: false, themeColor: true %}</div>
+          <p>{{ entry.title }}</p>
+        </div>
+        {% else %}
+        
+        <button
+          aria-expanded="{{ isOpen  }}"
+          class="flex items-center gap-2 w-full px-3 py-2 text-sm rounded-md transition-colors duration-200 hover:bg-interactive-hover
+            {% if isActive %}bg-interactive-hover font-medium{% endif %}"
+          _="
+            on click
+            set content to the next <div/>
+            set @aria-expanded to ( @aria-expanded == 'false' )
+            toggle .rotate-90 on #{{ navUUID }} in me
+            toggle .h-0 on the next <div/>
+          end
+          "
+        >
+          <div class="opacity-70">{% bookshop "generic/heroLibraryIcon" heroLibraryIconName: entry.icon iconType: "outline" iconSize: 'xxsmall' roundedBorder: false, themeColor: true %}</div>
+          <p>{{ entry.title }}</p>
+          <span id="{{ navUUID }}" class="transition-all duration-300 ease-in-out {% if isOpen %}rotate-90{% endif %}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+          </span>
+        </button>
+        {% endif %}
+      </li>
+    </div>
+    <div class="lg-accordian overflow-hidden transition-all duration-300 ease-in-out {% if isOpen or isToplevel %}{% else %}h-0{% endif %}">
+      <ul class="pl-3 flex flex-col gap-1">
+        {% for child in entry.children %}
+          {% render "partials/render-sidebar.html"
+            , entry: child
+            , level: level
+            , page: page
+            , navPages: navPages %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endif %}

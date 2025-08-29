@@ -1,0 +1,46 @@
+{% assign pageTitle = title | append: ' - ' | append: site.name %} 
+{% capture socialShareImage %}
+    {% if socialImage and socialImage != "" %} {{ socialImage }} 
+    {% elsif site.socialImage and site.socialImage != "" %} {{ site.socialImage }}
+{% endif %}
+{% endcapture %}
+{% assign socialShareImage = socialShareImage | strip %}
+{% comment %}
+We don't want any duplication. This is likely for the home page.
+{% endcomment %}
+ {% if site.name == title %}
+{% assign pageTitle = title %} 
+{% endif %} {% assign siteTitle = site.name %} 
+
+{%comment %}If the page's Front Matter has specific metaTitle and/or metaDesc items, switch them into the mix.   {%endcomment%}
+{% assign currentUrl = site.url | append: page.url %} 
+{% if metaTitle %} 
+{% assign pageTitle = metaTitle %} 
+{% endif %} 
+{% if not metaDesc %} 
+{% assign metaDesc = summary %} 
+{% endif %}
+
+<title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}" />
+
+<meta name="view-transition" content="same-origin" />
+
+<meta property="og:site_name" content="{{ siteTitle }}" />
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ currentUrl }}" />
+
+{% if socialShareImage and socialShareImage != "" %}
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:image" content="{{ socialShareImage }}" />
+<meta name="twitter:image" content="{{ socialShareImage }}" />
+<meta property="og:image:alt" content="Page image for {{ site.name }}" />
+<meta name="twitter:image:alt" content="Page image for {{ site.name }}" />
+{% endif %} {% if metaDesc %}
+<meta name="description" content="{{ metaDesc }}" />
+<meta name="twitter:description" content="{{ metaDesc }}" />
+<meta property="og:description" content="{{ metaDesc }}" />
+{% endif %}
+
+{% include "partials/favicon.html" %}

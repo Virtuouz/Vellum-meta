@@ -1,0 +1,14 @@
+[
+  {
+    "key": "vellum",
+    "name":"Vellum",
+    "icon":"pencil",
+    "path":"/"
+  },
+  {
+    "key": "future",
+    "name":"Future Improvements",
+    "icon":"beaker",
+    "path":"src/docs/future/future.md"
+  }
+]
