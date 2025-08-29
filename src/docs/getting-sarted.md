@@ -7,7 +7,7 @@ eleventyNavigation:
   key: Getting Started 
   order: 3
   title:
-  parent:
+  parent: intro
   url:
   icon: star
 pageLink:

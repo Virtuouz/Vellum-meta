@@ -4,23 +4,29 @@ draft: false
 title: Vellum Overview
 eleventyExcludeFromCollections: false
 eleventyNavigation:
-  key: Vellum Overview 
+  key: Vellum Overview
   order: 1
-  title:
-  parent:
-  url:
+  title: null
+  parent: intro
+  url: null
   icon: home
 pageLink: /
-metaDesc: 
-socialImage:
+metaDesc: null
+socialImage: null
 customCode:
-  headCode: ""
-  bodyCode: ""
+  headCode: ''
+  bodyCode: ''
 tags: vellum
 editorial_blocks: []
 ---
 
 ![Vellum Logo](</assets/images/uploads/Vellum Logo Gray.png>)
+
+||| info
+**Don't like the color theme?**
+
+You can view this site with the default theme here [default.vellumdocs.dev](https://default.vellumdocs.dev)
+|||
 
 ## What is Vellum?
 

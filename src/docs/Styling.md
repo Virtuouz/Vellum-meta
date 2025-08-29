@@ -7,7 +7,7 @@ eleventyNavigation:
   key: Styling 
   order: 5
   title:
-  parent: 
+  parent: intro
   url:
   icon: paint-brush
 pageLink:
