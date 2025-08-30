@@ -6,7 +6,7 @@ eleventyExcludeFromCollections: false
 eleventyNavigation:
   key: top-level
   order: 99
-  title: Top Level
+  title: Nested Example
   parent:
   url:
   icon: book-open

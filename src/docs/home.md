@@ -21,26 +21,30 @@ editorial_blocks: []
 ---
 
 ![Vellum Logo](</assets/images/uploads/Vellum Logo Gray.png>)
+Welcome to Vellum!
 
-||| info
-**Don't like the color theme?**
+Vellum is a documentation template built with a simple philosophy: creating beautiful, easy-to-read documentation should be an intuitive and enjoyable process for everyone, from developers to non-technical writers. It leverages the power of Markdown and the simplicity of 11ty to create a site that is fast, flexible, and fully customizable.
 
-You can view this site with the default theme here [default.vellumdocs.dev](https://default.vellumdocs.dev)
-|||
+## Who is Vellum For?
 
-## What is Vellum?
+Vellum is designed for two main types of users:
 
-Vellum is a modern documentation template designed to serve a diverse audience, from non-technical content editors to experienced developers. It bridges the gap between simple, unscalable solutions and complex, development-heavy frameworks.
+1. **Developers** who love the speed and simplicity of writing in Markdown and want a powerful, no-fuss foundation for their project's documentation.
+    
+2. **Non-technical writers and editors** who prefer a visual, click-based interface for creating and managing content, made possible through seamless integration with CloudCannon.
+    
 
-In the past, creating web-based documentation was primarily a technical task, often requiring developers to set up a site from scratch. This left many businesses, internal teams, and non-profit organizations without an easy way to build and maintain their own knowledge bases. Vellum was created to address this accessibility gap, providing a ready-to-use solution that's simple enough for anyone to get started, yet powerful enough to grow with your needs.
+## Core Concepts
 
----
+The key to understanding Vellum is its **Collection-based navigation**. A "Collection" is a self-contained set of documents. When you select a collection from the dropdown menu in the sidebar, the navigation automatically updates to show only the pages relevant to that topic.
 
-## Why Vellum?
+For example, this very documentation site is split into three collections:
 
-Many documentation solutions present a trade-off: they are either simple to start with but become difficult to manage as they grow, or they are powerful but require a steep learning curve and constant maintenance from a technical team.
+- **General:** High-level information for all users (you are here!).
+    
+- **Visual Editing Guide:** Specific instructions for content authors using CloudCannon.
+    
+- **Developer Guide:** Technical documentation for developers working with the code.
+    
 
-Vellum solves this by prioritizing both **ease of use** and **scalability**. The template is designed to be ready out of the box, allowing you to focus on your content from day one. At the same time, it is built to handle hundreds of documentation pages effortlessly through a powerful **collections system**. Think of collections as a digital filing cabinet, allowing you to logically organize pages into groups, making navigation and content management intuitive for everyone.
-
-Furthermore, many popular documentation frameworks rely on complex technologies like React, which can be an unnecessary overhead for building static, text-heavy sites. Vellum is built with **Eleventy (11ty)**, a simple yet incredibly fast static site generator. This choice of technology ensures that Vellum is lightweight, produces highly performant pages, and remains accessible to a wide variety of users.
-
+This system keeps your documentation organized and helps your readers find exactly what they need without getting lost.

@@ -6,9 +6,15 @@
     "path":"/"
   },
   {
-    "key": "future",
-    "name":"Future Improvements",
-    "icon":"beaker",
+    "key": "visual",
+    "name":"Visual Editing Guide",
+    "icon":"window",
+    "path":"src/docs/future/future.md"
+  },
+  {
+    "key": "dev",
+    "name":"Developer Guide",
+    "icon":"code-bracket",
     "path":"src/docs/future/future.md"
   }
 ]

@@ -16,7 +16,7 @@ socialImage:
 customCode:
   headCode: ""
   bodyCode: ""
-tags: future
+tags: visual
 editorial_blocks: []
 ---
 If there was future improvements, I'd mention them here. So far, I don't see any.

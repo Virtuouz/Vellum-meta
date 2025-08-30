@@ -16,45 +16,18 @@ tags: vellum
 hero:
 content_blocks: []
 ---
+Getting started with Vellum is a straightforward process, but your first steps will depend on how you plan to work with your content.
 
-## Cloudcannon editing
-||| warning
-**Important**
+Please choose the path that best describes your role:
 
-This project uses the unified Cloudcannon configuration, please select the unified flag when first creating the site in Cloudcannon
-|||
+## Visual Editors
+For Visual Editors (Using CloudCannon)
+If you prefer a visual, click-based interface and will be writing and managing content through the CloudCannon CMS, this is the path for you. You'll learn how to create pages, add components, and configure your site without touching a line of code.
 
-When loading the project into cloud cannon please have the project build settings match the following:
+➡️ Continue to the [Visual Editing Guide](src/docs/visual-guide/getting-sarted.md)
 
-```json
-{
-  "ssg": "eleventy",
-  "mode": "hosted",
-  "build": {
-    "output": "dist",
-    "nodeVersion": "file", // labeled as use .nvmrc file in the UI
-    "preserved_paths": "node_modules/,.cache/,dist/assets/images/",
-    "output_path": "dist",
-    "install_command": "npm i",
-    "build_command": "npm run build"
-  }
-}
-```
+## Developers
+For Developers (Working Locally)
+If you're comfortable with code and want to run the project on your own machine, edit Markdown files directly, and customize the template's structure, this is your path. You'll learn how to set up the local environment, create content with Markdown, and extend Vellum's functionality.
 
-## Commit to 1 editing format per page
-Vellum is designed to be able to create the exact same documentation output whethe you are writing raw markdown, or using the visual editor.
-
-That being said, it is not recommended to use both the visual editor or raw markdown on a single page. 
-
-If you are using the content editor, you will not have access to the the more complicated components such as tabs, accordions, callouts, and tasklists as they are not supported. To use them, you will need to use write the raw markdown or use the visual content block based editor.
-
-## Raw markdown vs Content editor
-I say raw markdown instead of the content editor because it is really easy to start writing markdown in the source editor, load up the visual editor or content editor, and then everything in your markdown editor gets escaped breaking your formatting.
-
-```md
-[my label]{.label .blue}
-
-then becomes
-
-\[my label\]\{.label .blue\}
-```
+➡️ Continue to the Developer Guide
