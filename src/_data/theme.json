@@ -1,45 +1,33 @@
 {
-"light": {
-    "background-body": "#FAF5EA",
-    "background-surface": "#F3EBDD",
-    "background-interactive-hover": "#E9DFC9",
-    "text-primary": "#4A3B28",
-    "text-muted": "#7D6A53",
-    "border-primary": "#DCCEB5",
-
-    "accent-primary": "#A46A3E",   
-    "accent-hover":   "#B97848",
-
-    "accent-secondary": "#2F6F67",  
-    "accent-secondary-hover": "#367C73",
-
-    "code-inline-background": "#EEE5D2",
-    "code-inline-text": "#2A3642",
-    "code-block-background": "#F6EFE1"
+  "light": {
+    "background-body": "#ffffff",
+    "background-surface": "#f3f4f6",
+    "background-interactive-hover": "#e5e7eb",
+    "text-primary": "#111827",
+    "text-muted": "#6b7280",
+    "border-primary": "#d1d5db",
+    "accent-primary": "#0ea5e9",
+    "accent-hover": "#38bdf8",
+    "code-inline-background": "#e5e7eb",
+    "code-inline-text": "#994500",
+    "code-block-background": "#f9fafb"
   },
   "dark": {
-    "background-body": "#110c09",
-    "background-surface": "#2F2722",
-    "background-interactive-hover": "#3B312B",
-    "text-primary": "#EAE3D7",
-    "text-muted": "#AD9F8E",
-    "border-primary": "#4B4138",
-
-    "accent-primary": "#C1966C",  
-    "accent-hover":   "#D3AC83",
-
-    "accent-secondary": "#8AB3C7", 
-    "accent-secondary-hover": "#9BC1D3",
-
-    "code-inline-background": "#3A312B",
-    "code-inline-text": "#D7C6AA",
-    "code-block-background": "#2F2722"
+    "background-body": "#020617",
+    "background-surface": "#111827",
+    "background-interactive-hover": "#1f2937",
+    "text-primary": "#f3f4f6",
+    "text-muted": "#9ca3af",
+    "border-primary": "#333333",
+    "accent-primary": "#5fb6e0",
+    "accent-hover": "#7cc9f0",
+    "code-inline-background": "#212529",
+    "code-inline-text": "#e0b467",
+    "code-block-background": "#1a1e22"
   },
-
-  "heading_font": "Spectral",
+  "heading_font": "Lato",
   "content_font": "Lato",
-  "logo_font": "Spectral",
-
+  "logo_font": "Lato",
   "_inputs": {
     "background-body": {
       "type": "color",
