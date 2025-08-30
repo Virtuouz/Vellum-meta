@@ -18,9 +18,9 @@ content_blocks: []
 ---
 
 ||| info
-**Wan't to see the default color theme?**
+**Wan't to see the Vellum color theme?**
 
-This site isn't using the default colors and fonts, but you can view this site with those defaults here: [default.vellumdocs.dev](https://default.vellumdocs.dev)
+This site is using the default colors and fonts, but you can view this site with the Vellum theme here: [vellumdocs.dev](https://vellumdocs.dev)
 
 |||
 
