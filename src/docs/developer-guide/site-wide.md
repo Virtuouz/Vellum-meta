@@ -7,7 +7,7 @@ eleventyNavigation:
   key: Site-Wide Configuration
   order: 4
   title: null
-  parent: intro
+  parent:
   url: null
   icon: cog-6-tooth
 pageLink: 
@@ -16,7 +16,7 @@ socialImage: null
 customCode:
   headCode: ''
   bodyCode: ''
-tags: vellum
+tags: dev
 editorial_blocks: []
 ---
 The information in this section is more technical, but it should still make sense if you are using the visual editor
@@ -24,11 +24,6 @@ The information in this section is more technical, but it should still make sens
 Vellum's global settings are managed through a few key files located in the `src/_data/` directory. These files allow you to control everything from your site's name and logo to its color scheme and announcement banner.
 
 ## Theme (`theme.json`)
-||| info
-**Wan't to see the default color theme?**
-
-You can view this site with the default colors and fonts here [default.vellumdocs.dev](https://default.vellumdocs.dev)
-|||
 This file controls the entire visual appearance of your site.
 
 - **Colors:** The `light` and `dark` objects contain the color palettes for the two display modes. You can change any of these values to match your brand's aesthetic.

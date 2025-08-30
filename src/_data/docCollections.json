@@ -9,12 +9,12 @@
     "key": "visual",
     "name":"Visual Editing Guide",
     "icon":"window",
-    "path":"src/docs/future/future.md"
+    "path":"src/docs/visual-guide/getting-sarted.md"
   },
   {
     "key": "dev",
     "name":"Developer Guide",
     "icon":"code-bracket",
-    "path":"src/docs/future/future.md"
+    "path":"src/docs/developer-guide/site-wide.md"
   }
 ]
