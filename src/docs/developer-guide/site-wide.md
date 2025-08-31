@@ -5,11 +5,11 @@ title: Site-Wide Configuration
 eleventyExcludeFromCollections: false
 eleventyNavigation:
   key: Site-Wide Configuration
-  order: 4
+  order: 
   title: null
-  parent:
+  parent: setup
   url: null
-  icon: cog-6-tooth
+  icon:
 pageLink: 
 metaDesc: null
 socialImage: null
