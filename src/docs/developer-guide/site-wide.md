@@ -90,4 +90,16 @@ This file defines the different documentation "Collections" for your site. Each 
 - **key:** A short, unique identifier for the collection (e.g., "vellum").
 - **name:** The full, user-friendly name that appears in the dropdown menu (e.g., "Vellum").
 - **icon:** The name of the icon to display next to the collection name. Vellum uses Heroicons; you can find a list of names on their website.
-- **path:** The URL that the collection links to when selected.
+- **path:** The URL of the page that will act as the "home" page for that collection
+
+||| info
+**Info**
+
+It is recommended that any linking is done via the documents relative path. For example, this page has a relative path of `src/docs/developer-guide/site-wide.md` which automatically generates the correct link to [this page](src/docs/developer-guide/site-wide.md).
+|||
+
+```md
+It is recommended that any linking is done via the documents relative path. 
+
+For example, this page has a relative path of `src/docs/developer-guide/site-wide.md` which automatically generates the correct link to [this page](src/docs/developer-guide/site-wide.md).
+```
