@@ -15,6 +15,6 @@
     "key": "dev",
     "name":"Developer Guide",
     "icon":"code-bracket",
-    "path":"src/docs/developer-guide/site-wide.md"
+    "path":"src/docs/developer-guide/working-local.md"
   }
 ]

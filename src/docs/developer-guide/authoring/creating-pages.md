@@ -1,13 +1,13 @@
 ---
 _schema: default
 draft: false
-title: Setup
+title: Creating Pages 
 eleventyExcludeFromCollections: false
 eleventyNavigation:
-  key: setup
-  order:
-  title: Setup
-  parent:
+  key: creating pages
+  order: 
+  title: Creating Pages
+  parent: authoring
   url:
   icon:
 pageLink: 
@@ -19,3 +19,8 @@ customCode:
 tags: dev
 editorial_blocks: []
 ---
+||| error
+**WIP**
+
+This page is work in progress
+|||

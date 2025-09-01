@@ -5,7 +5,7 @@ title: Site-Wide Configuration
 eleventyExcludeFromCollections: false
 eleventyNavigation:
   key: Site-Wide Configuration
-  order: 
+  order: 100
   title: null
   parent: setup
   url: null
@@ -22,6 +22,13 @@ editorial_blocks: []
 The information in this section is more technical, but it should still make sense if you are using the visual editor
 
 Vellum's global settings are managed through a few key files located in the `src/_data/` directory. These files allow you to control everything from your site's name and logo to its color scheme and announcement banner.
+
+||| warning
+**Note** 
+
+You will see an `_inputs` key in many of the files below. This is is used to define the inputs within the Cloudcannon cms. You are not using Cloudcannon, you can safely ignore this key. 
+|||
+
 
 ## Theme (`theme.json`)
 This file controls the entire visual appearance of your site.

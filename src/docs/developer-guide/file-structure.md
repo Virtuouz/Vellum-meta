@@ -5,7 +5,7 @@ title: File Structure Explained
 eleventyExcludeFromCollections: false
 eleventyNavigation:
   key: File Structure Explained
-  order: 
+  order: 900
   title:
   parent: setup
   url:
