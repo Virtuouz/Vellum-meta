@@ -86,7 +86,7 @@ If you are working with Cloudcannon CMS, it is recommended to keep this behavior
 ### Catching Duplicate Permalinks
 If you are keeping the duplicate permalinks behavior, then you'll need to be on the look out for when a duplicate permalink has been created.
 
-Since this duplicate check happens at build time, it can easily happen when developing locally and it can be missed. The duplicate permalink check script works by adding a `permalink` key to the frontmatter of a page if a duplicate permalink is found, this prevents future duplicates, but it means that page will forever have a `-copy-1` at the end of the permalin if not caught. The best way to see if a page has had this key added is check which files have been updated through `git status`. 
+Since this duplicate check happens at build time, it can easily happen when developing locally and it can be missed. The duplicate permalink check script works by adding a `permalink` key to the frontmatter of a page if a duplicate permalink is found, this prevents future duplicates, but it means that page will forever have a `-copy-1` at the end of the permalink is not caught. The best way to see if a page has had this key added is check which files have been updated through `git status`. 
 
 ||| info
 **Avoiding headaches**
