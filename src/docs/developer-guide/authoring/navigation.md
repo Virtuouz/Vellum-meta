@@ -105,7 +105,7 @@ To disable the duplicate permalink check, you'll need to first:
 
 
 ## Internal linking
-**This is an important topic**, so it'll be explained first. It's a common use case to link out to other pages from within a page. However, knowing what the url of the page is can be tricky since Vellum creates permalinks dynamically. Even when you explcitly set a `pageLink` for a page, Vellum will still take into account all of the pages parent folders and make them part of the final url.
+**This is an important topic**. It's a common use case to link out to other pages from within a page. However, knowing what the url of the page is can be tricky since Vellum creates permalinks dynamically. Even when you explcitly set a `pageLink` for a page, Vellum will still take into account all of the pages parent folders and make them part of the final url.
 
 Instead of manually deciphering what the url of a page would be, you can instead just use the pages relative path instead. 
 
