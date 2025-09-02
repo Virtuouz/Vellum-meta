@@ -5,7 +5,7 @@ title: Setup
 eleventyExcludeFromCollections: false
 eleventyNavigation:
   key: setup
-  order:
+  order: 0
   title: Setup
   parent:
   url:

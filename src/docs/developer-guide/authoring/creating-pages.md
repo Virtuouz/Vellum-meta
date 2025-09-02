@@ -112,14 +112,8 @@ The `title` field is the title of the page. This is what will be displayed in th
 This a `true` or `false` field that indicates if the page should be excluded from the collections. A page marked as draft will have this value set to `true` at build time. This will prevent the page from showing up in 11ty collections which effectively means that it will not show up in any navigation or the sitemap.
 
 ### `eleventyNavigation`
-This is the navigation for the page. It is an object that contains the following fields:
+This is the navigation for the page. There is an in depth section on navigation [here](src/docs/developer-guide/authoring/navigation.md#eleventynavigation). 
 
-- `key`: The key of the navigation item. This is used to identify the navigation item in the navigation bar. If no title is provided, the key will be used as the title.
-- `order`: The order of the navigation item. This is used to sort the navigation items.
-- `title`: The title of the navigation item. This is what will be displayed in the navigation bar.
-- `parent`: The parent of the navigation item. This is used to group the navigation items. What is placed in this field is the `eleventyNavigation.key` of the parent navigation item.
-- `url`: This is if you want to link out to external pages, or to download files. If a value is set, the page will not build. This could also be used to link to internal pages.
-- `icon`: The icon of the navigation item. This is used to display an icon next to the navigation item. All you have to do is type in the name of the icon. You can find the options here [heroicons.com](https://heroicons.com/). An example of of an icon name is `archive-box-arrow-down`
 
 ### `pageLink`
 This is what the ending url of the page should be. For example a pagelink of `quick-start` would be `https://vellumdocs.dev/quick-start`. If this field is not set, the `title` field will be used as the `pageLink` instead. 

@@ -5,7 +5,7 @@ title: Authoring
 eleventyExcludeFromCollections: false
 eleventyNavigation:
   key: authoring
-  order: null
+  order: 100
   title: Authoring
   parent: null
   url: null
