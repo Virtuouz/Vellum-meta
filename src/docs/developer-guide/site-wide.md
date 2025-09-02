@@ -26,7 +26,7 @@ Vellum's global settings are managed through a few key files located in the `src
 ||| warning
 **Note** 
 
-You will see an `_inputs` key in many of the files below. This is is used to define the inputs within the Cloudcannon cms. You are not using Cloudcannon, you can safely ignore this key. 
+You will see an `_inputs` key in many of the files below. This is is used to define the inputs within the Cloudcannon cms. If you are not using Cloudcannon, you can safely ignore this key. 
 |||
 
 

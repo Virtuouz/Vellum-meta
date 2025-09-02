@@ -65,7 +65,7 @@ Using a pages relative path works anywhere a link can be created. In more techni
 
 The a `path` for each collection can also use a relative path, which will also automatically update when the url of the page changes.
 
-Here is there docCollections.json file of this site:
+Here is there `docCollections.json` file of this site:
 ```json
 {{docCollections | json: 4}}
 ```
