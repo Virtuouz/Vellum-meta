@@ -1,15 +1,15 @@
 ---
 _schema: default
 draft: false
-title: "4 Levels Deep Page"
+title: "Nested Daily Image"
 eleventyExcludeFromCollections: false
 eleventyNavigation:
   key: fourth-level
   order: 
-  title: Fourth Level
+  title: Daily Image
   parent: Third-Level
   url:
-  icon:
+  icon: photo
 pageLink: 
 metaDesc: 
 socialImage:

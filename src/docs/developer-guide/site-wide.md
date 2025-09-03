@@ -5,11 +5,11 @@ title: Site-Wide Configuration
 eleventyExcludeFromCollections: false
 eleventyNavigation:
   key: Site-Wide Configuration
-  order: 4
+  order: 100
   title: null
-  parent:
+  parent: setup
   url: null
-  icon: cog-6-tooth
+  icon:
 pageLink: 
 metaDesc: null
 socialImage: null
@@ -22,6 +22,13 @@ editorial_blocks: []
 The information in this section is more technical, but it should still make sense if you are using the visual editor
 
 Vellum's global settings are managed through a few key files located in the `src/_data/` directory. These files allow you to control everything from your site's name and logo to its color scheme and announcement banner.
+
+||| warning
+**Note** 
+
+You will see an `_inputs` key in many of the files below. This is is used to define the inputs within the Cloudcannon cms. If you are not using Cloudcannon, you can safely ignore this key. 
+|||
+
 
 ## Theme (`theme.json`)
 This file controls the entire visual appearance of your site.
@@ -83,4 +90,16 @@ This file defines the different documentation "Collections" for your site. Each 
 - **key:** A short, unique identifier for the collection (e.g., "vellum").
 - **name:** The full, user-friendly name that appears in the dropdown menu (e.g., "Vellum").
 - **icon:** The name of the icon to display next to the collection name. Vellum uses Heroicons; you can find a list of names on their website.
-- **path:** The URL that the collection links to when selected.
+- **path:** The URL of the page that will act as the "home" page for that collection
+
+||| info
+**Info**
+
+It is recommended that any linking is done via the documents relative path. For example, this page has a relative path of `src/docs/developer-guide/site-wide.md` which automatically generates the correct link to [this page](src/docs/developer-guide/site-wide.md).
+|||
+
+```md
+It is recommended that any linking is done via the documents relative path. 
+
+For example, this page has a relative path of `src/docs/developer-guide/site-wide.md` which automatically generates the correct link to [this page](src/docs/developer-guide/site-wide.md).
+```
