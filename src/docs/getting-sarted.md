@@ -20,7 +20,7 @@ content_blocks: []
 ||| info
 **Wan't to see the default color theme?**
 
-This site isn't using the default colors and fonts, but you can view this site with those defaults here: [default.vellumdocs.dev](https://default.vellumdocs.dev)
+This site isn't using the default colors and fonts, but you can view this site with those defaults here: [default.vellumdocs.dev](https://default.vellumdocs.dev/getting-started/)
 
 |||
 
