@@ -3,8 +3,8 @@ spec:
   structures:
     - editorial_blocks
   label: "MermaidGraph"
-  description:
-  icon:
+  description: Create diagrams using mermaid diagramming language
+  icon: add_chart
   tags: []
 
 # Defines the structure of this component, as well as the default values
@@ -28,3 +28,4 @@ preview:
 _inputs:
   mermaidCode:
     type: code
+    comment: 'You can create a graph structure through new lines and indentation. Examples can be found here https://mermaid.live/'

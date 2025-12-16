@@ -3,7 +3,11 @@ spec:
   structures:
     - editorial_blocks 
   label: "Custom Embed"
+<<<<<<< HEAD
   description:
+=======
+  description: Add custom embeds or iframes
+>>>>>>> 97f335760838f39cfbfda094276b7cc5ab6a34a2
   icon: iframe
   tags: []
 

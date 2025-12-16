@@ -35,16 +35,6 @@ Headers are essential for structuring your document. Markdown provides six level
 ##### H5 Header (Used for fine-grained organization)
 ###### H6 Header (The smallest header)
 
-```md
-Headers are essential for structuring your document. Markdown provides six levels of headers.
-
-## H2 Header (A major section)
-### H3 Header (A sub-section)
-#### H4 Header (Further sub-division)
-##### H5 Header (Used for fine-grained organization)
-###### H6 Header (The smallest header)
-
-```
 
 ---
 
@@ -60,20 +50,6 @@ Like this.
 >
 > > This is a nested blockquote.
 > > It's useful for quoting a quote!
-
-```md
-This is a standard paragraph. You can create a new paragraph by leaving a blank line. This paragraph contains **bold text** and *italic text*. You can also use ***bold and italic text together***. Strikethrough text is also supported.
-
-You can also create a new line within a paragraph using two spaces at the end of the line.  
-Like this.
-
-> This is a blockquote. It's often used for quoting a passage from another source or for emphasizing a particular point.
-> You can have multiple paragraphs within a blockquote.
->
-> > This is a nested blockquote.
-> > It's useful for quoting a quote!
-
-```
 
 ---
 
@@ -98,26 +74,6 @@ Lists are great for organizing information. There are ordered lists, unordered l
     2.  Another nested ordered item
 4.  Fourth item
 
-```md
-### Unordered Lists
-
-* Item one
-* Item two
-    * A nested item
-    * Another nested item
-* Item three
-
-### Ordered Lists
-
-1.  First item
-2.  Second item
-3.  Third item
-    1.  A nested ordered item
-    2.  Another nested ordered item
-4.  Fourth item
-
-```
-
 ---
 
 ## Code
@@ -138,25 +94,6 @@ def hello_world():
 
 # Call the function
 hello_world()
-```
-
-```md
-### Inline Code
-
-Use backticks to show `inline code`. This is great for mentioning a variable name like `my_variable` or a function `my_function()`.
-
-### Code Blocks
-
-You can create a code block using three backticks. You can also specify the language for syntax highlighting.
-
-\```python
-def hello_world():
-  print("Hello, world!")
-
-# Call the function
-hello_world()
-\```
-
 ```
 
 ## Tables
@@ -187,7 +124,7 @@ You can align columns by using colons (`:`) in the separator line.
 |Left|Center|Right|
 |Aligned|Aligned|Aligned|
 
-mardown of the table above 
+Markdown of the table above 
 
 ```md
 |Left-Aligned|Center-Aligned|Right-Aligned|
@@ -203,25 +140,9 @@ Links and images are essential for connecting to other resources and adding visu
 
 ### Links
 
-This is a [link to Google](https://www.google.com). You can also use reference-style links, which can make your markdown cleaner for multiple links to the same URL.
+This is a [link to Google](https://www.google.com){target=_blank}. You can also use reference-style links, which can make your markdown cleaner for multiple links to the same URL.
 
-Here's an example: [Google Home Page](https://www.google.com).
-
-### Images
-
-You can embed images in your documentation. They use similar syntax to links but with an exclamation mark at the beginning.
-
-These images are automatically optimized by using 11ty img plugin
-
-![Example Image](/assets/images/uploads/aliensunrise_1.jpg)
-
-
-```md
-### Links
-
-This is a [link to Google](https://www.google.com). You can also use reference-style links, which can make your markdown cleaner for multiple links to the same URL.
-
-Here's an example: [Google Home Page](https://www.google.com).
+Here's an example: [Google Home Page](https://www.google.com){target=_blank}.
 
 ### Images
 
@@ -230,17 +151,14 @@ You can embed images in your documentation. They use similar syntax to links but
 These images are automatically optimized by using 11ty img plugin
 
 ![Example Image](/assets/images/uploads/aliensunrise_1.jpg)
-
-
-```
 
 ## Video Embeds (Youtube and Vimeo)
 
 There is a dedicated component for embedding YouTube and Vimeo videos.
 
 They are powered by:
-* https://github.com/paulirish/lite-youtube-embed
-* https://github.com/luwes/lite-vimeo-embed
+* [https://github.com/paulirish/lite-youtube-embed](https://github.com/paulirish/lite-youtube-embed){target=_blank}
+* [https://github.com/luwes/lite-vimeo-embed](https://github.com/luwes/lite-vimeo-embed){target=_blank}
 
 {% bookshop 'snippets/videoEmbed' platform: "youtube" videoId: "tKrJTc2DgbY" %}
 
@@ -278,17 +196,6 @@ You can create a horizontal rule using three or more hyphens (`---`), asterisks 
   C -->|No| E[NO GRAPHS];
 ```
 
-```md
-\```mermaid
-  graph TD;
-  A[Want graphs in 11ty] -->|Search Plugin| B(Found plugin);
-  B --> C{Use plugin?};
-  C -->|Yes| D[NICE GRAPHS];
-  C -->|No| E[NO GRAPHS];
-\```
-
-```
-
 ---
 
 ## Task Lists
@@ -300,16 +207,7 @@ Task lists (or checkboxes) are a great way to track to-do items.
 - [ ] This is an incomplete task.
     
 - [ ] Another incomplete task.
-
-```md
-Task lists (or checkboxes) are a great way to track to-do items.
-
-- [x] This is a completed task.
     
-- [ ] This is an incomplete task.
-    
-- [ ] Another incomplete task.
-```    
 
 ---
 
@@ -319,17 +217,13 @@ Sometimes you need to display a character that Markdown would normally format, l
 
 \*This text is not italic.\* \#This is not a header.
 
-```md
-\*This text is not italic.\* \#This is not a header.
-```
-
 ---
 
 ## Out of the box markdown containers
 
 Markdown-it container plugin is installed. 
 
-https://www.npmjs.com/package/markdown-it-container
+[https://www.npmjs.com/package/markdown-it-container](https://www.npmjs.com/package/markdown-it-container){target=_blank}
 
 The following containers come defined and styled out of the box
 
@@ -399,10 +293,10 @@ You should pay attention to this. It's not critical, but it's important.
 
 ---
 
-## Mardown Tabs
+## Markdown Tabs
 This is possible through markdown it tab plugin. Out of the box only a `tabs` container is configured, styled, and has the js to make it work.
 
-https://www.npmjs.com/package/@mdit/plugin-tab
+[https://www.npmjs.com/package/@mdit/plugin-tab](https://www.npmjs.com/package/@mdit/plugin-tab){target=_blank}
 
 ::: tabs#fruit
 
@@ -433,7 +327,7 @@ This is a tab about **oranges**
 ----
 ## Accordion
 These acordions are possible through markdown-it-collapsible plugin:
-https://www.npmjs.com/package/markdown-it-collapsible
+[https://www.npmjs.com/package/markdown-it-collapsible](https://www.npmjs.com/package/markdown-it-collapsible){target=_blank}
 
 The the default rendering of this plugin has been modified for styling purposes and nested accordion support.
 
@@ -495,7 +389,7 @@ email (string, optional): The user's email address.
 ----
 ## File Tree
 This template comes with markdown-it-ultree installed to generate file trees that can be collapesed. The tree has been styled to match your theme.
-* https://www.npmjs.com/package/markdown-it-ultree
+* [https://www.npmjs.com/package/markdown-it-ultree](https://www.npmjs.com/package/markdown-it-ultree){target=_blank}
 
 
 Checkout out this example tree!
@@ -576,8 +470,8 @@ This isn't the actual tree structure of this project. It's just a demo of the pl
 ## Bracketed spans
 
 This template comes with the following markdown-it plugins installed
-* https://www.npmjs.com/package/markdown-it-bracketed-spans
-* https://www.npmjs.com/package/markdown-it-attrs
+* [https://www.npmjs.com/package/markdown-it-bracketed-spans](https://www.npmjs.com/package/markdown-it-bracketed-spans){target=_blank}
+* [https://www.npmjs.com/package/markdown-it-attrs](https://www.npmjs.com/package/markdown-it-attrs){target=_blank}
 
 The styles below come out of the box.
 

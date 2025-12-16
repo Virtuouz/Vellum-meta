@@ -65,6 +65,13 @@
 
 {% block content %}
 
+<!-- Bookshop component for page content -->
+{% capture bookshopContent %}
+  {% bookshop_include "doc" editorial_blocks: editorial_blocks %}
+{% endcapture %}
+
+{% assign bookshopTOC = bookshopContent | toc %}
+{% assign contentTOC = content | toc  %}
 
 <dialog id="modal-search" class="fixed top-0 z-[920] h-full w-full overflow-scroll p-4 opacity-0 open:bg-surface open:bg-opacity-80 open:backdrop-blur-lg sm:p-10">
   <div class="flex flex-col gap-10">
@@ -96,7 +103,7 @@
   "
   >
     <!-- Search and Collection Selection Section -->
-    <div class="mt-4 flex flex-col gap-2 pb-4 mb-4 border-b border-borderColor-primary">
+    <div class="mt-4 justify-between flex flex-col gap-2 pb-4 mb-4 border-b border-borderColor-primary">
       <!-- Search Bar -->
       <button class="hidden lg:block relative bg-interactive-hover rounded-md"
         _="
@@ -116,24 +123,25 @@
       >
     <p class="opacity-40">Search</p> <div class="opacity-80"><span class="kbd">ctrl</span>+<span class="kbd">k</span></div></div>
       </button>      
-      <div class="self-end flex gap-3 items-center">
+      <div class="lg:hidden self-end flex gap-4 items-center">
         <!-- Theme Toggle -->
-          <div class="lg:hidden flex justify-between">
+          <div class=" flex justify-between">
       <button
+        aria-label="Color theme toggle"
         id="dark-toggle-mobile"
         class="flex gap-2 p-1 items-center text-sm opacity-75 border border-textColor-primary rounded-full"
         aria-label="Toggle color theme"
       >
         <div id="sun-icon-mobile">
-          {% bookshop "generic/heroLibraryIcon" heroLibraryIconName: "sun" iconType: "solid" iconSize: 'micro' roundedBorder: false, themeColor: true %}
+          {% bookshop "generic/heroLibraryIcon" heroLibraryIconName: "sun" iconType: "solid" iconSize: 'xxsmall' roundedBorder: false, themeColor: true %}
         </div>
         <div id="moon-icon-mobile">
-          {% bookshop "generic/heroLibraryIcon" heroLibraryIconName: "moon" iconType: "solid" iconSize: 'micro' roundedBorder: false, themeColor: true %}
+          {% bookshop "generic/heroLibraryIcon" heroLibraryIconName: "moon" iconType: "solid" iconSize: 'xxsmall' roundedBorder: false, themeColor: true %}
         </div>
       </button>
           </div>
         <button class="lg:hidden opacity-75"
-       
+          aria-label="Close"
           _="
           on click
             toggle .invisible on #navigation-bar
@@ -143,7 +151,7 @@
           end
           "
         >
-          {% bookshop "generic/heroLibraryIcon" heroLibraryIconName: "x-mark" iconType: "solid" iconSize: 'xsmall' roundedBorder: false, themeColor: true  %}
+          {% bookshop "generic/heroLibraryIcon" heroLibraryIconName: "x-mark" iconType: "solid" iconSize: 'small' roundedBorder: false, themeColor: true  %}
         </button>
       </div>
       <!-- Logo -->
@@ -193,7 +201,7 @@
             <div class="opacity-60 ">
               {% bookshop "generic/heroLibraryIcon" heroLibraryIconName: primaryCollection.icon iconType: "solid" iconSize: 'micro' roundedBorder: false, themeColor: true %}
             </div>
-            <p>{{ primaryCollectionName }}</p>
+            <p>{{ primaryCollectionName | default: "Select a Collection" }}</p>
           </div>
           <div class="absolute inset-y-1 right-0 flex items-center pr-3 pointer-events-none">
             <svg id="dropdown-arrow" class="w-5 h-4 text-muted transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -250,11 +258,21 @@
    
   </aside>
 
+  {% comment %}Check if table of contents exists {% endcomment %}
+  {% if bookshopTOC and bookshopTOC != ""  %}
+    {% assign tocExists = true %}
+  {% endif %}
+  {% if contentTOC and contentTOC != "" %}
+    {% assign tocExists = true %}
+  {% endif %}
+
   <div class="order-2 flex flex-col flex-1 min-w-0">
+    {% include "partials/banner.html" %}
     <!-- Mobile TOC Dropdown -->
-    <div id="mobile-navbar" class="transition-all duration-300 xl:hidden sticky top-0 z-10 w-full bg-body p-4 border-b border-borderColor-primary">
+    <div id="mobile-navbar" class="transition-all duration-300 {% if tocExists %}xl:hidden{% else  %}lg:hidden {% endif %} sticky top-0 z-10 w-full bg-body p-4 border-b border-borderColor-primary">
        <div class="lg:hidden flex gap-4 justify-end opacity-75 w-full bg-body ">
           <button
+            aria-label="Search"
             _="
             on click
             set modal to #modal-search
@@ -265,7 +283,7 @@
             {% bookshop "generic/heroLibraryIcon" heroLibraryIconName: "magnifying-glass" iconType: "solid" iconSize: 'xsmall' roundedBorder: false, themeColor: true %}
           </button>
           <button
-           
+            aria-label="Toggle navigation"
             _="
             on click
               toggle .invisible on #navigation-bar
@@ -277,7 +295,9 @@
           >
             {% bookshop "generic/heroLibraryIcon" heroLibraryIconName: "bars-3-bottom-right" iconType: "solid" iconSize: 'xsmall' roundedBorder: false, themeColor: true %}
           </button>
- </div> 
+    </div> 
+    {% if tocExists %}
+      
       <div class="mt-2 relative w-full">
         <button
           id="mobile-toc-button"
@@ -311,11 +331,13 @@
           aria-expanded="false"
           class="absolute top-full left-1 mt-1 w-[calc(100%-8px)] bg-interactive-hover border border-borderColor-primary rounded-md shadow-lg transition-all duration-300 origin-top invisible scale-y-0 max-h-[60vh] overflow-y-auto z-10"
         >
-          <div class="p-4 opacity-80 text-sm">
-            {{ content | toc }}
+          <div class="px-4 py-2 opacity-80 text-sm">
+            {{ bookshopTOC }}
+            {{ contentTOC }}
           </div>
         </div>
       </div>
+    {% endif %}
     </div>
    
     <div class="flex-1 overflow-x-auto">
@@ -326,17 +348,15 @@
         {% endif %} 
         class=" flex w-full mx-auto p-8">
         <div class="cs-mainContent mt-16 xl:mt-0 flex flex-col w-full cs-mainContent max-w-4xl mx-auto flex-1">
-          <h1>{{ title }}</h1>
-          <!-- Bookshop component for page content -->
-          {% capture bookshopContent %}
-            {% bookshop_include "doc" editorial_blocks: editorial_blocks %}
-          {% endcapture %}
-          {{ bookshopContent }}
-          {% if content and content != "" %}
-            <article data-cms-edit="content" class=" ">
-              {{ content }}
-            </article>
-          {% endif %}
+          <div data-pagefind-body>
+            <h1>{{ title }}</h1>
+            {{ bookshopContent }}
+            {% if content and content != "" %}
+              <article data-cms-edit="content" class=" ">
+                {{ content }}
+              </article>
+            {% endif %}
+          </div>
 
           <!-- PREVIOUS/NEXT NAVIGATION RENDER -->
           <div class="mt-12 pt-8 border-t border-borderColor-primary flex justify-between items-start gap-4">
@@ -379,16 +399,17 @@
   </div>
  
   <!-- Right Table of Contents (TOC) -->
+   {% if tocExists %}
   <div class="order-3 hidden xl:block w-72 h-screen p-4 sticky top-0 overflow-y-auto">
     <div class="flex flex-col gap-4">
       <p class="text-sm font-semibold opacity-75">On this page</p>
       <div class="opacity-80 text-sm">
-        {{ bookshopContent | toc }}
-
-        {{ content | toc }}
+          {{ bookshopTOC }}
+          {{ contentTOC }}
       </div>
     </div>
   </div>
+   {% endif %}
  
 </div>
 {% endblock %}

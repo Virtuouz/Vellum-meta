@@ -3,8 +3,8 @@ spec:
   structures:
     - editorial_blocks
   label: "Task List"
-  description:
-  icon:
+  description: Simple checkboxes that can be checked or unchecked
+  icon: checklist
   tags: []
 
 # Defines the structure of this component, as well as the default values

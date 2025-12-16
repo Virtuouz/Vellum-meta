@@ -2,23 +2,29 @@
 spec:
   structures:
     - editorial_blocks
-  label: "Tabs"
-  description: Organize content into tabs to free up space.
-  icon: tabs
+  label: "File Tree"
+  description: Create a file tree using just text and indentation
+  icon: account_tree
   tags: []
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  tabs:
-    - title: 
-      editorials: [bookshop:structure:editorial_blocks!(generic/textBlock)]
+  treeCode: >-
+    . root
+
+      src
+
+        index.html
+
+        style.css
+
+      output
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
-  title:
-    type: text
-    comment: 'The title of the tab'
-    label: 'Tab title'
+  treeCode:
+    type: code
+    comment: 'You can create a tree structure through new lines and indentation. A root is required and only one root can exist per tree'

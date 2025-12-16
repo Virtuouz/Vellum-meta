@@ -17,9 +17,28 @@ const MarkdownItCollapsible = require("markdown-it-collapsible");
 const ultree = require('markdown-it-ultree');
 
 const yaml = require("js-yaml");
+const slugify = require("slugify");
+
 
 const markdownItAnchor = require("markdown-it-anchor");
-const pluginTOC = require("eleventy-plugin-nesting-toc");
+const linkAfterHeader = markdownItAnchor.permalink.linkInsideHeader({
+  class: "anchor",
+  symbol: "<span >#</span>",
+  style: "aria-labelledby",
+});
+const markdownItAnchorOptions = {
+  level: [1, 2, 3,4,5,6],
+  slugify: (str) =>
+    slugify(str, {
+      lower: true,
+      strict: true,
+      remove: /["]/g,
+    }),
+  tabIndex: false,
+  // simply use the constant defined above
+  permalink: linkAfterHeader, 
+};
+const pluginTOC = require("eleventy-plugin-toc");
 const markdownIt = require("markdown-it"),
   md = markdownIt({
     html: true,
@@ -52,7 +71,7 @@ module.exports = async function (eleventyConfig) {
   // Initialize markdown-it
   const md = markdownIt(options)
     .disable(["code"])
-    .use(markdownItAnchor)
+    .use(markdownItAnchor, markdownItAnchorOptions)
     .use(markdownItContainer, "div")
     .use(markdownItContainer, "info", {
       marker: "|",
@@ -139,7 +158,9 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
-  eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ["h1", "h2", "h3", "h4", "h5", "h6"],
+  });
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
@@ -157,7 +178,6 @@ module.exports = async function (eleventyConfig) {
   eleventyConfig.addFilter("fileSubstringFilter", fileSubstringFilter);
   eleventyConfig.addFilter("uuidFilter", uuidFilter);
   eleventyConfig.addFilter("startsWith", function (itemUrl, pageUrl) {
-    console.log(itemUrl, pageUrl);
     return itemUrl.length > 1 && pageUrl.indexOf(itemUrl) === 0;
   });
   eleventyConfig.addFilter("pathExists", pathExistsFilter);
