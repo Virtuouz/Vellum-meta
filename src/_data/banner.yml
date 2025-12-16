@@ -2,7 +2,7 @@ enable_banner: true
 markdown: "**The docs are under construction**: *the ink is still wet*" 
 id: wip-2025-08-29
 show_until: 2027-07-27T00:00:00Z
-backgroundColor: '#031e2c'
+backgroundColor: '#692d08'
 textColor: '#ffffff'
 _inputs:
   enable_banner:
