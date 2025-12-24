@@ -58,6 +58,7 @@ You can collapse the root directory or any other directories of the file structu
       styles
     docs
       404.md
+      changelogrss.liquid
       docs.11tydata.js
       docs.json
       home.md
@@ -169,6 +170,9 @@ A simple system that can help you stay organized is to create a folder for each 
 #### `docs/404.md`
 This is the page that is shown when a page is not found. Notice how it is just a page that has some markdown. You can choose to update the existing markdown to your liking. You can however create a dedicated layout for the 404 page that has more bells and whistles to suit your needs.
 
+### `changelogrss.liquid`
+This is a file that is used to create the changelogrss.xml file. It outputs to `/changelog/feed.xml`
+
 #### `docs/docs.11tydata.js`
 This is a data file that computes data at run time. This file is what determines if a page should build or not based on the `draft` property.
 
@@ -199,7 +203,7 @@ This is where utility functions that run during the build step have been created
 
 * `build-theme.js`
 * `generateFavicon.js`
-* `permalinkDupCheck.js` (more on this in the routing documentation) 
+* `permalinkDupCheck.js` (more on this in the routing documentation)
 
 ## `.cloudcannon.config.yml`
 This is the global Cloudcannon configuration file. If you aren't planning to use the visual editor, you can ignore this file.

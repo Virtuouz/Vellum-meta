@@ -3,9 +3,10 @@ _schema: default
 draft: false
 title: Creating Pages 
 eleventyExcludeFromCollections: false
+date:
 eleventyNavigation:
   key: creating pages
-  order: 
+  order: 100
   title: Creating Pages
   parent: authoring
   url:
@@ -45,6 +46,7 @@ _schema: default
 draft: false
 title: Creating Pages 
 eleventyExcludeFromCollections: false
+date:
 eleventyNavigation:
   key: creating pages
   order: 
@@ -73,6 +75,7 @@ _schema: default
 draft: false
 title: Page
 eleventyExcludeFromCollections: false
+date:
 eleventyNavigation:
   key: page
   order: 
@@ -110,6 +113,9 @@ The `title` field is the title of the page. This is what will be displayed in th
 
 ### `eleventyExcludeFromCollections`
 This a `true` or `false` field that indicates if the page should be excluded from the collections. A page marked as draft will have this value set to `true` at build time. This will prevent the page from showing up in 11ty collections which effectively means that it will not show up in any navigation or the sitemap.
+
+### `date`
+The `date` field is the creation date of the page. If left blank the file's created date will be used. This primarily used for sorting in the changelog. To learn more about what vales are supported check out the official 11ty date documentation [here](https://www.11ty.dev/docs/dates/){target=_blank}.
 
 ### `eleventyNavigation`
 This is the navigation for the page. There is an in depth section on navigation [here](src/docs/developer-guide/authoring/navigation.md#eleventynavigation). 

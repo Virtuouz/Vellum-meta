@@ -85,6 +85,12 @@ This file controls the site-wide notification banner that appears at the top of 
 
 ## Document Collections (`docCollections.json`)
 
+||| error
+**Important**
+
+The doc collection key of `changelog` is reserved and should only be set and used for the changelog pages.
+|||
+
 This file defines the different documentation "Collections" for your site. Each collection in the list is an object with the following properties:
 
 - **key:** A short, unique identifier for the collection (e.g., "vellum").
@@ -96,10 +102,12 @@ This file defines the different documentation "Collections" for your site. Each 
 **Info**
 
 It is recommended that any linking is done via the documents relative path. For example, this page has a relative path of `src/docs/developer-guide/site-wide.md` which automatically generates the correct link to [this page](src/docs/developer-guide/site-wide.md).
-|||
 
++++ meta example
 ```md
 It is recommended that any linking is done via the documents relative path. 
 
 For example, this page has a relative path of `src/docs/developer-guide/site-wide.md` which automatically generates the correct link to [this page](src/docs/developer-guide/site-wide.md).
 ```
++++
+|||

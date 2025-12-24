@@ -26,6 +26,7 @@ collections_config:
       - '!sitemap.njk'
       - '!404.md'
       - '!docs.json'
+      - '!changelogrss.liquid'
     name: Docs
     description: All your docs
     icon: description
@@ -84,6 +85,10 @@ collections_config:
         type: select
         options:
           values: data.docCollections[*].key
+      date:
+        label: Create Date
+        comment: Used to override the creation date of this page. Primarily used for sorting in the changelog. Leave blank to use page creation date.
+        instance_value: NOW
     schemas:
       default:
         path: .cloudcannon/schemas/doc.md
@@ -499,6 +504,13 @@ _inputs:
         - x-circle
         - x-mark
 _snippets:
+  changeLog:
+    template: eleventy_liquid_bookshop_component
+    inline: false
+    preview:
+      text: Change Log 
+    definitions:
+      component_name: simple/changelog
   videoEmbed:
     template: eleventy_liquid_bookshop_component
     inline: false
@@ -509,6 +521,7 @@ _snippets:
       named_args:
         - editor_key: platform
           type: string
+          default: youtube
         - editor_key: videoId
           type: string
     _inputs:
