@@ -243,6 +243,15 @@
         {% for entry in navPages %} {% render "partials/render-sidebar.html",
           entry: entry, level:-1, page:page, eleventyNavigation: eleventyNavigation, navPages: navPages %} {% endfor %}
       </ul>
+      <div class="notification hidden bg-cyan-100 border border-cyan-700 p-4 mt-4">
+          <div class="  text-left">
+              <p class="text-2xl text-cyan-900">No Live Updates</p>
+              <div class="text-base text-slate-900">
+              <p class="text-base text-slate-900">This navigation bar and collection selector does not live update. Save your changes to see updated navigation</p>
+              <p class="text-sm"><br> This note is only visible in live editor. It won't be shown in live site</p>
+              </div>
+          </div>
+      </div>
     </nav>
       <!-- Theme Toggle -->
     <div class="hidden lg:flex justify-between">
@@ -353,10 +362,12 @@
         class=" flex w-full mx-auto p-8">
         <div class="cs-mainContent mt-16 xl:mt-0 flex flex-col w-full cs-mainContent max-w-4xl mx-auto flex-1">
           <div data-pagefind-body>
-            <h1>{{ title }}</h1>
-            {% bookshop_include "doc" editorial_blocks: editorial_blocks %}
+            <h1 data-editable="text" data-prop="title">{{ title }}</h1>
+            <editable-component data-prop="editorial_blocks" data-component="doc">
+              {% bookshop_include "doc" editorial_blocks: editorial_blocks %}
+            </editable-component>
             {% if content and content != "" %}
-              <article data-cms-edit="content" class=" ">
+              <article data-editable="text" data-prop="@content" class=" ">
                 {{ content }}
               </article>
             {% endif %}
@@ -410,6 +421,15 @@
       <div class="opacity-80 text-sm">
           {{ bookshopTOC }}
           {{ contentTOC }}
+      </div>
+      <div class="notification hidden bg-cyan-100 border border-cyan-700 p-4 mt-4">
+          <div class="  text-left">
+              <p class="text-2xl text-cyan-900">No Live Updates</p>
+              <div class="text-base text-slate-900">
+              <p class="text-base text-slate-900">This table of contents does not live update. Save your changes to see updated table of contents</p>
+              <p class="text-sm"><br> This note is only visible in live editor. It won't be shown in live site</p>
+              </div>
+          </div>
       </div>
     </div>
   </div>
