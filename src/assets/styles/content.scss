@@ -675,7 +675,70 @@ details[open] {
   }
 }
 
+pre.mermaid {
+  overflow: hidden;
+  padding: 0;
+  min-height: 200px;
+  position: relative;
+  touch-action: pan-x pan-y;
+  cursor: grab;
 
+  .mermaid-gesture-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 7px;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+}
+
+.svg-pan-zoom-control {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 5;
+
+  button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-primary);
+    border-radius: 4px;
+    background: var(--background-surface);
+    color: var(--text-muted);
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    &:hover {
+      color: var(--text-primary);
+      background: var(--background-interactive-hover);
+    }
+  }
 }
 
 /* --- Responsive Heading Styles for Mobile --- */
